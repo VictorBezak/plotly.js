@@ -2067,7 +2067,7 @@ function getCoord(axLetter, winningPoint, fullLayout) {
 
     var cd0 = winningPoint.cd[0];
 
-    if(ax.type === 'category') val = ax._categoriesMap[val];
+    if(ax.type === 'category' || ax.type === 'multicategory') val = ax._categoriesMap[val];
     else if(ax.type === 'date') {
         var periodalignment = winningPoint.trace[axLetter + 'periodalignment'];
         if(periodalignment) {
