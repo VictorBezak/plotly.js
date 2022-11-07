@@ -889,6 +889,16 @@ function createHoverText(hoverData, opts) {
     var ya = c0.ya;
     var axLetter = hovermode.charAt(0);
     var t0 = c0[axLetter + 'Label'];
+
+    // search in array for the label
+    if(!t0) {
+        hoverData.map(function(data) {
+            if(data[axLetter + 'Label']) {
+                t0 = data[axLetter + 'Label'];
+            }
+        });
+    }
+
     var outerContainerBB = getBoundingClientRect(gd, outerContainer);
     var outerTop = outerContainerBB.top;
     var outerWidth = outerContainerBB.width;
